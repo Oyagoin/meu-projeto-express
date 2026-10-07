@@ -1,0 +1,25 @@
+COMO RODAR O PROJETO
+
+1. Abra o arquivo .env e troque "sua_senha" pela senha do PostgreSQL.
+
+2. No pgAdmin:
+   - Botão direito em Databases > Create > Database > nome: meu_banco
+   - Botão direito em meu_banco > Query Tool
+   - Cole o conteúdo do arquivo database.sql e execute (botão play)
+
+3. Abra a pasta do projeto no VS Code, abra o terminal e rode:
+   npm install
+   npm run dev
+
+   Deve aparecer: API na porta 3000
+
+   Se o Windows bloquear o nodemon, rode antes:
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+4. Teste no Postman (servidor ligado):
+   POST   http://localhost:3000/api/users     Body > raw > JSON:
+          { "name": "Maria Silva", "email": "maria@email.com" }
+   GET    http://localhost:3000/api/users
+   GET    http://localhost:3000/api/users/1
+   PUT    http://localhost:3000/api/users/1   (Body igual ao POST)
+   DELETE http://localhost:3000/api/users/1
